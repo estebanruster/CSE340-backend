@@ -1,0 +1,27 @@
+{
+  "name": "cse340-backend",
+  "version": "1.0.0",
+  "description": "Learning web backend fundamentals. Developing skills in Node.js, NPM nd PostgreSQL",
+  "homepage": "https://github.com/estebanruster/CSE340-backend#readme",
+  "bugs": {
+    "url": "https://github.com/estebanruster/CSE340-backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/estebanruster/CSE340-backend.git"
+  },
+  "license": "ISC",
+  "author": "Esteban Mangas",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
