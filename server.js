@@ -2,6 +2,7 @@ import express from 'express';
 import { fileURLToPath } from 'url';
 import path from 'path';
 import { testConnection } from './src/models/db.js';
+import { getAllOrganizations } from './src/models/organizations.js';
 
 
 // Define the the application environment
@@ -38,8 +39,12 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/organizations', async (req, res) => {
+    /*Using the import from organiztions.js; making a call to
+    the function that queries all the organizations in the db*/
+    const organizations = await getAllOrganizations();
+
     const title = 'Our Partner Organizations';
-    res.render('organizations', { title });
+    res.render('organizations', { title, organizations });
 });
 
 app.get('/projects', async (req, res) => {
