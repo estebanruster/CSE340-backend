@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 import path from 'path';
 import { testConnection } from './src/models/db.js';
 import { getAllOrganizations } from './src/models/organizations.js';
+import { getAllProjects } from './src/models/projects.js';
 
 
 // Define the the application environment
@@ -48,8 +49,14 @@ app.get('/organizations', async (req, res) => {
 });
 
 app.get('/projects', async (req, res) => {
+    /*Using the import from projects.js; making a call to
+    the function that queries all the projects in the db*/
+    const projects = await getAllProjects();
+    //testing
+    //console.log(projects);
+
     const title = 'Service Projects';
-    res.render('projects', { title });
+    res.render('projects', { title, projects });
 });
 
 app.get('/categories', async (req, res) => {
