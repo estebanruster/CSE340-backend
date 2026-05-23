@@ -8,7 +8,7 @@
         <h2>Upcoming Service Projects</h2>
         <ul>
             <% projects.forEach (project => { %>
-            <li><%= project.display_date %>: <i><%= project.title %></i> <strong>(<%= project.name %>)</strong></li>
+            <li><strong><%= project.display_date %>: <%= project.title %> <i>(<%= project.name %>)</i></strong></li>
             <% }); %>
         </ul>
     </main>
